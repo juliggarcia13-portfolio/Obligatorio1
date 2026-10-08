@@ -1,0 +1,614 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+
+}
+
+:root {
+  --verde: #223729;
+  --oliva: #66705e;
+  --arena: #e8dfd2;
+  --arena-clara: #f0e8dd;
+  --blanco: #ffffff;
+  --texto: #2a2f2a;
+  --gris: #6d6d6d;
+  --linea: #8c8c85;
+  --error: #f4c1b3;
+  --exito: #cfe3c4;
+  --f-sans: "Arimo", Arial, sans-serif;
+  --f-serif: "Lora", Georgia, serif;
+  --gutter: 1.25rem;
+  --trans: 0.25s ease;
+}
+
+body {
+  margin: 0;
+  font-family: var(--f-sans);
+  color: var(--texto);
+  background: var(--blanco);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 0.1875rem solid var(--oliva);
+  outline-offset: 0.2rem;
+}
+
+.solo-tablet,
+.solo-desktop {
+  display: none;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 1.1rem 2.6rem;
+  border: 0;
+  cursor: pointer;
+  background: var(--verde);
+  color: var(--blanco);
+  font: 700 1rem var(--f-sans);
+  text-decoration: none;
+  transition: background var(--trans), transform var(--trans);
+}
+
+.btn:hover {
+  background: var(--oliva);
+  transform: translateY(-0.15rem);
+}
+
+.btn--chico {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.8rem;
+  text-transform: none;
+}
+
+.btn--claro {
+  background: var(--arena-clara);
+  color: var(--verde);
+  font-size: 0.8rem;
+}
+
+.btn--claro:hover {
+  background: var(--arena);
+}
+
+.hero p {
+  color: var(--oliva);
+  font-size: 1.1rem;
+}
+
+/* Cabecera y menú */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem var(--gutter);
+  background: var(--arena);
+  border-bottom: 1px solid var(--linea);
+}
+
+Header a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.menu-btn {
+  display: block;
+  width: 1.75rem;
+  height: 0.14rem;
+  margin: 0.5rem 0;
+  background: var(--verde);
+  box-shadow: 0 0.5rem 0 var(--verde), 0 -0.5rem 0 var(--verde);
+}
+
+/* Los 4 botones del menú aparecen desde tablet */
+header nav {
+  display: none;
+}
+
+/* ---------- Portada ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 30rem;
+  padding: var(--gutter);
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  margin: 0.6rem 0 1.6rem;
+  max-width: 9em;
+  color: var(--verde);
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+/* ---------- Beneficios ---------- */
+.beneficios {
+  padding: 4rem var(--gutter);
+  background: var(--blanco);
+}
+
+.beneficios div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.beneficio {
+  text-align: center;
+}
+
+.beneficio img {
+  width: 14rem;
+  aspect-ratio: 1;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.beneficio h3 {
+  color: var(--verde);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.beneficio p {
+  max-width: 18rem;
+  margin: 0.6rem auto 0;
+  color: var(--gris);
+  font-size: 1rem;
+}
+
+/* ---------- Limpieza consciente ---------- */
+.limpieza__galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.limpieza__galeria img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.g-hogar,
+.g-limpieza {
+  position: relative;
+}
+
+.g-hogar p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--verde);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.g-hogar p span {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.g-limpieza .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.g-limpieza .btn:hover {
+  transform: translate(-50%, calc(-50% - 0.15rem));
+}
+
+.limpieza__texto {
+  display: none;
+}
+
+/* ---------- Productos ---------- */
+#productos {
+  padding: 4rem var(--gutter);
+}
+
+.productos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+.producto__foto {
+  position: relative;
+}
+
+.producto__foto img {
+  width: 100%;
+}
+
+.producto__tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.6rem 0.8rem;
+  background: var(--blanco);
+  color: var(--texto);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.producto h3 {
+  margin: 1.2rem 0 0.8rem;
+  color: var(--verde);
+  font-size: 1.9rem;
+}
+
+.producto p {
+  color: var(--gris);
+  font-size: 1.1rem;
+}
+
+.ver-mas {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--gris);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--trans);
+}
+
+.ver-mas:hover {
+  color: var(--verde);
+}
+
+/* ---------- Suscripción ---------- */
+
+.suscripcion {
+  padding: 4.5rem var(--gutter) 5rem;
+  background: var(--verde);
+  color: var(--arena-clara);
+  text-align: center;
+}
+
+.suscripcion h2 {
+  max-width: 12em;
+  margin: 0 auto;
+  font: 400 2.2rem/1.15 var(--f-serif);
+}
+
+.form {
+  max-width: 36rem;
+  margin: 2.2rem auto 0;
+}
+
+.form__fila {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.form input[type="email"] {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  background: var(--blanco);
+  color: var(--texto);
+  font: 1.2rem var(--f-sans);
+}
+
+.form input[type="email"]:focus:invalid {
+  outline: 0.15rem solid var(--error);
+}
+
+.form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.form__check input {
+  flex: none;
+  margin-top: 0.2rem;
+  accent-color: var(--arena);
+}
+
+.form__gracias {
+  display: none;
+  margin-top: 1rem;
+  color: var(--exito);
+  font-size: 0.95rem;
+}
+
+.form__gracias:target {
+  display: block;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding: 2.5rem var(--gutter);
+  background: var(--arena-clara);
+  text-align: center;
+}
+
+.pie__lema {
+  color: var(--oliva);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pie__creditos {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  color: var(--gris);
+  font-size: 0.8rem;
+}
+
+@media all and (min-width:768px) {
+  .solo-tablet {
+    display: block;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  header nav {
+    display: block;
+  }
+
+  header nav ul {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  header nav a {
+    display: block;
+    padding: 0.7rem 1.4rem;
+    background: var(--verde);
+    color: var(--blanco);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  header nav a:hover {
+    background: var(--oliva);
+    transform: translateY(-0.15rem);
+  }
+
+  .hero {
+    min-height: 29.5rem;
+  }
+
+  .hero p {
+    font-size: 1.4rem;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: 3.4rem;
+  }
+
+  .beneficios {
+    padding: 5rem 2rem;
+  }
+
+  .beneficios div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  .limpieza__galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .g-sofa {
+    grid-column: 1 / -1;
+  }
+
+  .g-hogar__txt {
+    font-size: 1.6rem;
+  }
+
+  .limpieza__texto {
+    display: block;
+    padding: 5rem 2rem 5rem 4.5rem;
+    background: var(--arena);
+  }
+
+  .limpieza__texto h2 {
+    color: var(--verde);
+    font-size: 3.4rem;
+    line-height: 1.1;
+  }
+
+  .limpieza__texto p:not(.eyebrow) {
+    max-width: 30rem;
+    margin: 1.2rem 0 2rem;
+    font-size: 1.15rem;
+  }
+
+  #productos {
+    padding: 5rem 2.5rem;
+  }
+
+  .productos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 56rem;
+  }
+
+  .producto h3 {
+    font-size: 1.6rem;
+  }
+
+  .producto p {
+    font-size: 1rem;
+  }
+
+  .suscripcion h2 {
+    max-width: none;
+    font-size: 2.6rem;
+  }
+
+  .form__fila {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .form input[type="email"] {
+    flex: 1;
+  }
+
+  .btn--claro {
+    flex: none;
+  }
+}
+
+
+@media all and (min-width:1200px) {
+  .solo-desktop {
+    display: block;
+  }
+
+  .hero {
+    min-height: 42rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero .btn {
+    min-width: 15rem;
+    padding: 1.6rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  .beneficios {
+    position: relative;
+    width: 67%;
+    margin: -8.4rem auto 0;
+    padding: 4.8rem 2rem 6rem;
+  }
+
+  .beneficios div {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: none;
+  }
+
+  .beneficio h3 {
+    font-size: 1.1rem;
+  }
+
+  .beneficio p {
+    max-width: 10rem;
+    font-size: 0.78rem;
+  }
+
+  #limpieza {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 4rem;
+  }
+
+  .g-sofa {
+    aspect-ratio: 2.4 / 1;
+  }
+
+  .limpieza__texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 5rem;
+  }
+
+  .limpieza__texto h2 {
+    font-size: 2.6rem;
+  }
+
+  .limpieza__texto p:not(.eyebrow) {
+    font-size: 0.95rem;
+  }
+
+
+  .productos__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 74rem;
+  }
+
+  .producto h3 {
+    font-size: 1.4rem;
+  }
+
+  .suscripcion {
+    padding: 6.5rem var(--gutter) 7rem;
+  }
+
+  .suscripcion h2 {
+    font-size: 3rem;
+    max-width: 12em;
+  }
+
+  .form {
+    max-width: 40rem;
+  }
+}

@@ -1,0 +1,14 @@
+URL del sitio publicado: [completar, ej. https://usuario.github.io/hogar/]
+
+ODS elegido: [completar. Propuesta: ODS 12 - Producción y consumo responsables]
+
+Enfoque conceptual:
+HOGAR propone repensar cómo elegimos y cuidamos los muebles de casa.
+Se centra en tres ideas: materiales de origen responsable, piezas duraderas
+y reparables, y métodos de limpieza que alargan su vida útil.
+Invita a comprar menos y mejor, en lugar de renovar por temporada.
+
+Uso de IA generativa: [confirmar con la docente que está permitido y completar]
+Herramienta: Claude (Anthropic). Contexto: ayuda en la maquetación de HTML y CSS a partir del diseño propio.
+Sitio hecho solo con HTML y CSS (sin JavaScript).
+Imágenes: provisorias recortadas del diseño; reemplazar por las originales y acreditar su fuente.
